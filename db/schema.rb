@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 20160906060615) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "answer_content"
-    t.boolean  "is_correct",     default: true
+    t.boolean  "is_correct",     default: false
     t.integer  "word_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.index ["word_id"], name: "index_answers_on_word_id", using: :btree
   end
 
