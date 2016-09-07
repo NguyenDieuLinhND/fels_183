@@ -31,8 +31,6 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.0]
       # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
-      t.timestamps null: false
     end
 
     add_index :users, :email, unique: true

@@ -23,3 +23,19 @@ en:
     cancel_account: "Delete my account"
     back: "Back"
     update: "Update"
+    users: "Users"
+
+  admin:
+    home_title: "Home"
+
+  provide:
+    create_user: "Create user"
+
+  btn:
+    submit: "Submit"
+
+  flash:
+    create_user_success: "Create user successgully!"
+
+  message:
+    error: "The form contains %{error_count} errors"
