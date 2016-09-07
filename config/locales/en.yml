@@ -4,3 +4,22 @@ en:
   header:
     logo: "Framgia E-Learning System"
     login: "Login"
+    signup: "Signup"
+    logout: "Log out"
+    edit_user: "Edit Profile"
+
+  user_method:
+    login: "Log In"
+    edit: "Edit"
+
+  warning:
+    character_minimum: "characters minimum"
+    change_password: "(leave blank if you don't want to change it)"
+    need_password: "(we need your current password to confirm your changes)"
+    unhappy: "Unhappy?"
+    sure: "Are you sure?"
+
+  user_option:
+    cancel_account: "Delete my account"
+    back: "Back"
+    update: "Update"
