@@ -1,0 +1,13 @@
+<% provide :title, t("provide.create_word") %>
+<h1><%= t "provide.create_word" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for [:admin, @word] do |f| %>
+      <%= f.input :category_id, collection: @category_selects %>
+      <%= f.input :name %>
+      <p><%= link_to_add_fields t("btn.add_answer"), f, :answers %></p>
+      <p><%= f.submit t("btn.submit"), class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
+</div>

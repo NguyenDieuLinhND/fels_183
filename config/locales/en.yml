@@ -9,6 +9,8 @@ en:
     edit_user: "Edit Profile"
     users: "Users"
     categories: "Categories"
+    words: "Words"
+    answers: "Answers"
 
   user_method:
     login: "Log In"
@@ -35,11 +37,14 @@ en:
     categories: "Categories"
     create_category: "Create category"
     edit_category: "Edit category"
+    create_word: "Create word"
+    create_answer: "Create answer"
 
   btn:
     submit: "Submit"
     add_word: "Add word"
     add_answer: "Add answer"
+    remove: "Remove"
 
   flash:
     create_user_success: "Create user successgully!"
