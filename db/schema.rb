@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20160907014836) do
     t.string   "fullname"
     t.string   "avatar",                 default: "http://www.aiche.org/sites/default/files/profile-photo-default/avatar.gif"
     t.boolean  "is_admin",               default: false
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at",                                                                                                   null: false
     t.datetime "updated_at",                                                                                                   null: false
     t.string   "email",                  default: "",                                                                          null: false

@@ -18,11 +18,14 @@ en:
     edit: "Edit"
 
   warning:
+    remind_change_email_address: "Your twitter did'nt give us your email so we
+      will give you a default email, please change it later"
     character_minimum: "characters minimum"
     change_password: "(leave blank if you don't want to change it)"
     need_password: "(we need your current password to confirm your changes)"
     unhappy: "Unhappy?"
     sure: "Are you sure?"
+    omniauth_sign_in: "Sign in with "
 
   user_option:
     cancel_account: "Delete my account"

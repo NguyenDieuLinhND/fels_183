@@ -1,8 +1,3 @@
-<div class="center jumbotron">
-  <%= link_to image_tag "dcf5ee9e-6673-4e6d-8ca9-ab27ee33bd3b.png", class: "thumbnail" %>
-  <center><h1><%= t "header.logo" %></h1></center>
-</div>
-
 <% if user_signed_in? %>
   <div class="row">
     <div class="col-xs-3 left-content">
@@ -25,5 +20,11 @@
         <h2 class="text-left"><%= t "home.activities" %></h2>
       </div>
     </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <%= link_to image_tag "dcf5ee9e-6673-4e6d-8ca9-ab27ee33bd3b.png",
+      class: "thumbnail" %>
+    <center><h1><%= t "header.logo" %></h1></center>
   </div>
 <% end %>
