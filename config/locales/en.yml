@@ -7,6 +7,8 @@ en:
     signup: "Signup"
     logout: "Log out"
     edit_user: "Edit Profile"
+    users: "Users"
+    categories: "Categories"
 
   user_method:
     login: "Log In"
@@ -30,12 +32,19 @@ en:
 
   provide:
     create_user: "Create user"
+    categories: "Categories"
+    create_category: "Create category"
+    edit_category: "Edit category"
 
   btn:
     submit: "Submit"
+    add_word: "Add word"
+    add_answer: "Add answer"
 
   flash:
     create_user_success: "Create user successgully!"
+    create_success: "Create successfully!"
+    edit_success: "Edit successfully!"
 
   message:
     error: "The form contains %{error_count} errors"

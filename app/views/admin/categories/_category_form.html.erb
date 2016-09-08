@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+  <%= render "shared/error_messages", object: @category %>
+  <%= f.input :name %>
+  <%= f.input :description, as: :text %>
+
+  <%= f.submit t("btn.submit"), class: "btn btn-primary" %>
+<% end %>
