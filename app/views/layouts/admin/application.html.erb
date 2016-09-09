@@ -21,17 +21,17 @@
         <ul class="nav" id="left-menu">
           <li>
             <span class="glyphicon glyphicon-user icon" aria-hidden="true">&nbsp;
-              <%= link_to t("header.users"), admin_users_path %>
+              <%= link_to t("header.users"), admin_users_path, class: "manage" %>
             </span>
           </li>
           <li>
             <span class="glyphicon glyphicon-gift icon" aria-hidden="true">&nbsp;
-              <%= link_to t("header.categories"), admin_categories_path %>
+              <%= link_to t("header.categories"), admin_categories_path, class: "manage" %>
             </span>
           </li>
           <li>
             <span class="glyphicon glyphicon-pencil icon" aria-hidden="true">&nbsp;
-              <%= link_to t("header.words"), admin_words_path %>
+              <%= link_to t("header.words"), admin_words_path, class: "manage" %>
             </span>
           </li>
         </ul>
