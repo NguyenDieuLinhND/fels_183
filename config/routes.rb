@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "static_pages#home"
-    resources :users, only: [:index, :new, :create]
+    resources :users, except: [:edit, :update]
     resources :categories, except: [:show, :destroy]
     resources :words, only: [:index, :new, :create]
   end

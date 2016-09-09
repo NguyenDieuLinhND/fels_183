@@ -5,7 +5,7 @@ class Admin::CategoriesController < Admin::BaseController
     @search = Category.ransack params[:q]
     @categories = @search.nil? ? Category.all : @search.result
     @categories = @categories.order("updated_at DESC").paginate page: params[:page],
-      per_page: Settings.size_categories
+      per_page: Settings.size
   end
 
   def new
