@@ -1,6 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* format lib bootstrap -- rest */
+.row {
+  margin : 0px auto;
+}
+
+/* header */
+.header-menu {
+  width: 85%;
+}
+
 /* universal */
 
 body {
@@ -57,9 +67,74 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  text-align: center;
+}
+
+#logo-admin {
+  width: 15%;
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  background: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  text-align: center;
 }
 
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.sidebar .nav > li.active-pro {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+
+.sidebar .nav > li.active-pro a {
+  background: rgba(255, 255, 255, 0.14);
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+.wrapper {
+  min-height: 600px;
+  position : relative;
+}
+
+.sidebar {
+  width: 15%;
+  float  :left ;
+  height: 100%;
+  background: #299D0C;
+}
+
+.main-panel {
+  width: 85%;
+  float: left;
+  height: 100%;
+}
+
+#left-menu li {
+  padding: 10px 20px 10px 20px;
+}
+
+span{
+  font-size: 17px;
+}
+
+a{
+  text-decoration: none;
+  color:#ffffff;
+}
+
+.icon {
+  color: white;
+}
+
+.categories {
+  margin-top: 20px;
 }

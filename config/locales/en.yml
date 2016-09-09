@@ -31,6 +31,7 @@ en:
 
   admin:
     home_title: "Home"
+    manage: "Manage"
 
   provide:
     create_user: "Create user"
@@ -45,6 +46,8 @@ en:
     add_word: "Add word"
     add_answer: "Add answer"
     remove: "Remove"
+    search: "Search"
+    edit: "Edit"
 
   flash:
     create_user_success: "Create user successgully!"
@@ -53,3 +56,10 @@ en:
 
   message:
     error: "The form contains %{error_count} errors"
+
+  table:
+    name: "Name"
+    quantity_word: "Quantity word"
+
+  title:
+    search_name: "Search name"
