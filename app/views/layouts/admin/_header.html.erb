@@ -1,9 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to image_tag("http://recruit.framgia.vn/wp-content/uploads/
-      2016/06/framgia-logo-black-1.png",
-      class: "img-responsive"),
-      root_path, id: "logo" %>
+  <div class="row">
+    <%= link_to image_tag("http://recruit.framgia.vn/wp-content/uploads/2016/06/framgia-logo-black-1.png"),
+      root_path, id: "logo-admin" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("header.categories"), admin_categories_path %></li>

@@ -1,0 +1,17 @@
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= t "table.name" %></th>
+        <th><%= t "tabel.quantity_word" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @categories %>
+    </tbody>
+  </table>
+</div>
+<div class="row text-center">
+  <%= will_paginate %>
+</div>

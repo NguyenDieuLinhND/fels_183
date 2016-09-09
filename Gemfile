@@ -13,6 +13,9 @@ gem "jbuilder", "~> 2.5"
 gem "cancancan"
 gem "simple_form"
 gem "bcrypt", "3.1.11"
+gem "config"
+gem "ransack"
+gem "will_paginate", "3.1.0"
 
 group :development, :test do
   gem "byebug", platform: :mri

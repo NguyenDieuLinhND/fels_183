@@ -2,6 +2,10 @@ class Admin::CategoriesController < Admin::BaseController
   load_and_authorize_resource
 
   def index
+    @search = Category.ransack params[:q]
+    @categories = @search.nil? ? Category.all : @search.result
+    @categories = @categories.order("updated_at DESC").paginate page: params[:page],
+      per_page: Settings.size_categories
   end
 
   def new
