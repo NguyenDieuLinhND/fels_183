@@ -1,5 +1,5 @@
 <li>
-  <%= gravatar_for user, size: Settings.size_gravatar %>
+  <%= image_tag user.avatar, class: "img-lesson" %>
   <%= link_to user.fullname, [:admin, user] %>
   <%= link_to(t("user.admin.delete"), [:admin, user],
     method: :delete, data: {confirm: t("confirm.delete_user")},
