@@ -52,6 +52,7 @@ en:
     words: "Words"
     lesson: "Lessons"
     filter: "Filter"
+    start: "Start"
 
   flash:
     create_user_success: "Create user successgully!"
@@ -71,6 +72,10 @@ en:
     search_name: "Search name"
     category: "Category"
     all: "All"
+    word_count: "%{word_count} words"
+    description: "Description: %{description}"
+    word: "Word"
+    category_name: "Name: %{category_name}"
 
   confirm:
     delete_user: "Are you want to delete this user?"
