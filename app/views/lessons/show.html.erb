@@ -1,0 +1,19 @@
+<% provide :title, t("provide.do_lesson") %>
+
+<div class="exam_info">
+  <div class="category">
+    <h3><%= t "title.category", category_name: @lesson.category.name %></h3>
+  </div>
+</div>
+<h1><%= t "title.content" %></h1>
+
+<%= form_for @lesson do |f| %>
+  <ol>
+    <%= f.fields_for :results do |builder| %>
+      <%= render "result", f: builder %>
+    <% end %>
+  </ol>
+  <div class="action-finish-lesson center" >
+    <%= f.submit t("btn.finish"), class: "btn btn-primary btn-finish" %>
+  </div>
+<% end %>

@@ -12,3 +12,6 @@ status_word:
   learned: "learned"
   not_learned: "not_learned"
   all: "show_all"
+
+word:
+  minimum: 10
