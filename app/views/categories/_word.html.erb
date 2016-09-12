@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead class="thead_table_word">
+    <tr>
+      <td><%= t "title.word" %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @words.each do |word| %>
+      <tr>
+        <td><%= word.name %><tab /></td>
+      </tr>
+    <% end %><br />
+  </tbody>
+</table>
