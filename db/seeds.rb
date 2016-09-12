@@ -20,21 +20,24 @@ end
 20.times do |m|
   Word.create! name: "word#{m+1}", category_id: 1
   4.times do |t|
-    Answer.create! answer_content: "answer#{t}", word_id: "#{m+1}"
+    t==3 ? is_correct = "true" : is_correct = "false"
+    Answer.create! answer_content: "answer#{t}", word_id: "#{m+1}", is_correct: is_correct
   end
 end
 
 20.times do |m|
   Word.create! name: "word#{m+21}", category_id: 2
   4.times do |t|
-    Answer.create! answer_content: "answer#{t}", word_id: "#{m+21}"
+    t==1 ? is_correct = "true" : is_correct = "false"
+    Answer.create! answer_content: "answer#{t}", word_id: "#{m+21}", is_correct: is_correct
   end
 end
 
 20.times do |m|
   Word.create! name: "word#{m+41}", category_id: 3
   4.times do |t|
-    Answer.create! answer_content: "answer#{t}", word_id: "#{m+41}"
+    t==0 ? is_correct = "true" : is_correct = "false"
+    Answer.create! answer_content: "answer#{t}", word_id: "#{m+41}", is_correct: is_correct
   end
 end
 
@@ -42,5 +45,5 @@ end
 Lesson.create! category_id: "1", user_id: "3"
 
 4.times do |n|
-  Result.create! lesson_id: "1", answer_id: "#{n}", word_id: "#{n+3}"
+  Result.create! lesson_id: "1", answer_id: "#{n+1}", word_id: "#{n+3}"
 end
