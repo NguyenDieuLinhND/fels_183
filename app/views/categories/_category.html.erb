@@ -9,7 +9,10 @@
     </div>
     <div class="panel-body">
       <div class="btn-group" role="group" aria-label="...">
-        <%= link_to t("btn.start"), "#", class: "btn btn-primary" %>
+        <%= form_for Lesson.new do |f| %>
+          <%= f.hidden_field :category_id, value: category.id %>
+          <%= f.submit t("btn.start"), class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>

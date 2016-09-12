@@ -13,20 +13,33 @@ User.create! fullname: "LinhND", email: "linh@framgia.com", password: "111111",
   password_confirmation: "111111", is_admin: false
 
 3.times do |n|
+  text = "text".center(100, "text")
   Category.create! name: "Basic#{n}"
 end
 
-Lesson.create! category_id: "1", user_id: "3"
-
 20.times do |m|
-  3.times do |n|
-    Word.create! name: "word#{m+n}", category_id: "#{n+1}"
+  Word.create! name: "word#{m+1}", category_id: 1
+  4.times do |t|
+    Answer.create! answer_content: "answer#{t}", word_id: "#{m+1}"
   end
 end
 
-4.times do |n|
-  Answer.create! answer_content: "answer#{n}", word_id: "#{n+1}"
+20.times do |m|
+  Word.create! name: "word#{m+21}", category_id: 2
+  4.times do |t|
+    Answer.create! answer_content: "answer#{t}", word_id: "#{m+21}"
+  end
 end
+
+20.times do |m|
+  Word.create! name: "word#{m+41}", category_id: 3
+  4.times do |t|
+    Answer.create! answer_content: "answer#{t}", word_id: "#{m+41}"
+  end
+end
+
+
+Lesson.create! category_id: "1", user_id: "3"
 
 4.times do |n|
   Result.create! lesson_id: "1", answer_id: "#{n}", word_id: "#{n+3}"

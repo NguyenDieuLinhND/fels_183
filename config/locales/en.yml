@@ -41,6 +41,7 @@ en:
     edit_category: "Edit category"
     create_word: "Create word"
     create_answer: "Create answer"
+    do_lesson: "Do lesson"
 
   btn:
     submit: "Submit"
@@ -53,6 +54,7 @@ en:
     lesson: "Lessons"
     filter: "Filter"
     start: "Start"
+    finish: "Finish"
 
   flash:
     create_user_success: "Create user successgully!"
@@ -76,6 +78,8 @@ en:
     description: "Description: %{description}"
     word: "Word"
     category_name: "Name: %{category_name}"
+    category: "Category: %{category_name}"
+    content: "Questions"
 
   confirm:
     delete_user: "Are you want to delete this user?"
@@ -83,3 +87,10 @@ en:
   home:
     learned: "Learned %{word_learned} words"
     activities: "Activities"
+
+  answer:
+    correct: "Answer is correct!"
+    wrong: "Answer is wrong!"
+
+  lesson:
+    learned_all: "The words have been learning all!"
