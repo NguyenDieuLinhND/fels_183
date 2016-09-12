@@ -1,6 +1,29 @@
 <div class="center jumbotron">
-  <%= link_to image_tag "http://www.reviewcompany.vn/public/media/uploads/company/
-    large_logo/2014-08-21/dcf5ee9e-6673-4e6d-8ca9-ab27ee33bd3b.png",
-    class: "img-thumbnail" %>
+  <%= link_to image_tag "dcf5ee9e-6673-4e6d-8ca9-ab27ee33bd3b.png", class: "thumbnail" %>
   <center><h1><%= t "header.logo" %></h1></center>
 </div>
+
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-xs-3 left-content">
+      <div class="row text-center">
+        <%= link_to image_tag(current_user.avatar, alt: current_user.fullname,
+          size: Settings.size_avatar), "#" %>
+        <br>
+        <%= link_to current_user.fullname, "#"  %>
+      </div>
+      <div class="row text-center">
+        <p class="text-center"><%= t "home.learned", word_learned: @word_learned.size %></p>
+     </div>
+    </div>
+    <div class="col-xs-9 right-content">
+      <div class="row text-cente btn-top">
+        <%= link_to t("btn.words"), words_path,
+          class: "btn btn-primary button-top" %>
+        <%= link_to t("btn.lesson"), "#", class: "btn btn-primary button-top",
+          id:"lesson" %>
+        <h2 class="text-left"><%= t "home.activities" %></h2>
+      </div>
+    </div>
+  </div>
+<% end %>

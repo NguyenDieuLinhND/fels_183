@@ -8,45 +8,51 @@
   <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="sidebar" data-color="purple" >
-
-      <div class="sidebar-wrapper">
-        <div class="logo">
-          <h2 class="glyphicon glyphicon-home icon" aria-hidden="true">&nbsp;
-            <%= t "admin.manage" %>
-          </h2>
+  <%= render "layouts/admin/header" %>
+  <div class="row main-body">
+    <div class="wrapper">
+      <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+        <div class="sidebar-wrapper">
+          <div class="logo-admin text-center">
+            <%= link_to image_tag("framgia-logo-black-1.png"), root_path,
+              id: "logo-admin" %>
+          </div>
+          <ul class="nav l-menu">
+            <li>
+              <span class="glyphicon glyphicon-user icon" aria-hidden="true">
+                &nbsp;<%= link_to t("header.users"), admin_users_path %>
+              </span>
+            </li>
+            <li>
+              <span class="glyphicon glyphicon-gift icon" aria-hidden="true">
+                &nbsp;<%= link_to t("header.categories"), admin_categories_path %>
+              </span>
+            </li>
+            <li>
+              <span class="glyphicon glyphicon-pencil icon" aria-hidden="true">
+                &nbsp;<%= link_to t("header.words"), admin_words_path %>
+              </span>
+            </li>
+            <li>
+              <span class="glyphicon glyphicon-log-out icon", aria-hidden="true">
+                &nbsp;
+                <%= link_to t("header.logout"), destroy_user_session_path,
+                  method: :delete %>
+              </span>
+            </li>
+          </ul>
         </div>
-
-        <ul class="nav" id="left-menu">
-          <li>
-            <span class="glyphicon glyphicon-user icon" aria-hidden="true">&nbsp;
-              <%= link_to t("header.users"), admin_users_path, class: "manage" %>
-            </span>
-          </li>
-          <li>
-            <span class="glyphicon glyphicon-gift icon" aria-hidden="true">&nbsp;
-              <%= link_to t("header.categories"), admin_categories_path, class: "manage" %>
-            </span>
-          </li>
-          <li>
-            <span class="glyphicon glyphicon-pencil icon" aria-hidden="true">&nbsp;
-              <%= link_to t("header.words"), admin_words_path, class: "manage" %>
-            </span>
-          </li>
-        </ul>
       </div>
-    </div>
 
-    <div class="main-panel">
-      <%= render "layouts/admin/header" %>
-      <div class="content">
-        <div class="container-fluid">
-          <div class="container">
-            <% flash.each do |message_type, message| %>
-              <div class="alert alert-<%= message_type %>"><%= message %></div>
-            <% end %>
-            <%= yield %>
+      <div class="main-panel">
+        <div class="content">
+          <div class="container-fluid">
+            <div class="container">
+              <% flash.each do |message_type, message| %>
+                <div class="alert alert-<%= message_type %>"><%= message %></div>
+              <% end %>
+              <%= yield %>
+            </div>
           </div>
         </div>
       </div>

@@ -1,13 +1,7 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="row">
-    <%= link_to image_tag("http://recruit.framgia.vn/wp-content/uploads/2016/06/framgia-logo-black-1.png"),
-      root_path, id: "logo-admin" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("header.categories"), admin_categories_path %></li>
-        <li><%= link_to t("header.words"), admin_words_path %></li>
-        <li><%= link_to t("header.users"), admin_users_path %></li>
-      </ul>
-    </nav>
-  </div>
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+      <h2><%= t "header.title_admin" %></h2>
+    </div>
+  </nav>
 </header>
