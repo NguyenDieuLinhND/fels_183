@@ -7,11 +7,10 @@ size_word_in_category: 10
 search_field:
   user: "fullname_cont"
   category: "name_cont"
-
 status_word:
   learned: "learned"
   not_learned: "not_learned"
   all: "show_all"
-
 word:
   minimum: 10
+default_password: "12345678"

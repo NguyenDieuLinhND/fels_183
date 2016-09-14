@@ -4,6 +4,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :fullname
       t.string :avatar, default: "http://www.aiche.org/sites/default/files/profile-photo-default/avatar.gif"
       t.boolean :is_admin, default: false
+      t.string :provider
+      t.string :uid
+
       t.timestamps
     end
   end
