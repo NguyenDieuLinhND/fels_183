@@ -32,6 +32,7 @@ en:
     back: "Back"
     update: "Update"
     users: "Users"
+    change_picture: "Change your picture"
 
   admin:
     home_title: "Home"
@@ -90,7 +91,7 @@ en:
   home:
     learned: "Learned %{word_learned} words"
     activities: "Activities"
-
+    join_date: "Joined from %{time}"
   answer:
     correct: "Answer is correct!"
     wrong: "Answer is wrong!"

@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-3 left-content">
+    <div class="row text-center">
+      <%= link_to image_tag(@user.avatar, alt: @user.fullname,
+        size: Settings.size_avatar), user_path(@user) %>
+      <br>
+      <%= @user.fullname %>
+    </div>
+    <div class="row text-center">
+      <p class="text-center">
+        <b>
+          <%= t "home.join_date",
+            time: @user.created_at.to_date.strftime(Settings.time_format) %>
+        </b>
+        <b><%= t "home.learned", word_learned: @word_learned.size %></b><br>
+      </p>
+    </div>
+  </div>
+  <div class="col-xs-9 right-content">
+    <div class="row text-center btn-top">
+      <h2 class="text-left"><%= t "home.activities" %></h2>
+    </div>
+  </div>
+</div>
