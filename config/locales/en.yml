@@ -18,6 +18,7 @@ en:
     edit: "Edit"
 
   warning:
+    remind_change_email_address: "Your twitter did'nt give us your email so we will give you a default email, please change it later"
     character_minimum: "characters minimum"
     change_password: "(leave blank if you don't want to change it)"
     need_password: "(we need your current password to confirm your changes)"
@@ -52,12 +53,14 @@ en:
     search: "Search"
     edit: "Edit"
     words: "Words"
-    lesson: "Lessons"
+    lesson: "Do lesson"
     filter: "Filter"
     start: "Do lesson"
     finish: "Finish"
     save: "Save"
     create_exam: "Create exam"
+    view: "View"
+    start: "Start"
 
   flash:
     create_user_success: "Create user successgully!"
@@ -76,6 +79,14 @@ en:
   table:
     name: "Name"
     quantity_word: "Quantity word"
+    lesson:
+      created_date: "Created Date"
+      subject: "Subject"
+      status: "Status"
+      duration: "Duration"
+      question_number: "Question number"
+      spent_time: "Spent time"
+      score: "Score"
 
   title:
     search_name: "Search name"
@@ -101,6 +112,8 @@ en:
     learned: "Learned %{word_learned} words"
     activities: "Activities"
     join_date: "Joined from %{time}"
+    lessons: "Lessons"
+
   answer:
     correct: "Answer is correct!"
     wrong: "Answer is wrong!"
