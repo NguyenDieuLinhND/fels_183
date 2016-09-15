@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
   def create
     @lesson = current_user.lessons.new lesson_params
     if @lesson.save
-      redirect_to @lesson.category
+      redirect_to root_path
     else
       redirect_to :back
     end

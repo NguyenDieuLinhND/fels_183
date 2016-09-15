@@ -1,4 +1,5 @@
 size: 8
+size_lesson: 5
 size_avatar: "200x200"
 size_avatar_activity: "50x50"
 size_gravatar: 50
@@ -8,6 +9,7 @@ size_word_in_category: 10
 search_field:
   user: "fullname_cont"
   category: "name_cont"
+  lesson: "category_name_cont"
 status_word:
   learned: "learned"
   not_learned: "not_learned"
@@ -16,3 +18,11 @@ word:
   minimum: 10
 default_password: "12345678"
 duration: 600
+time_duration: 10
+label:
+  label_testing: "label label-warning"
+  label_init: "label label-default"
+  label_checked: "label label-success"
+btn:
+  btn_start: "btn btn-primary"
+  btn_view: "btn btn-success"
