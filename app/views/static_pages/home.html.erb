@@ -50,7 +50,10 @@
                   <td><%= Settings.time_duration %></td>
                   <td><%= lesson.results.count %></td>
                   <td><%= lesson.spent_time %></td>
-                  <td><%= lesson.score %></td>
+                  <td>
+                    <%= t "title.count_correct", count_correct: lesson.score %>
+                    <%= t "title.results_count", results_count: lesson.results.count %>
+                  </td>
                   <td><%= link_to t("btn.#{lesson.init? ? "start" : "view"}"), lesson,
                     class: "#{status_button lesson}" %></td>
                 </tr>

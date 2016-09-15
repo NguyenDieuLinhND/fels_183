@@ -26,3 +26,4 @@ label:
 btn:
   btn_start: "btn btn-primary"
   btn_view: "btn btn-success"
+email_delay: 8

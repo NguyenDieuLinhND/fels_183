@@ -41,9 +41,6 @@ end
   end
 end
 
-
-Lesson.create! category_id: "1", user_id: "3"
-
 4.times do |n|
   Result.create! lesson_id: "1", answer_id: "#{n+1}", word_id: "#{n+3}"
 end
