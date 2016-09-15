@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   root "static_pages#home"
   resources :users, only: [:index, :show]
+  resources :relationships, only: [:index, :create, :destroy]
   resources :words, only: [:index]
   resources :categories, only: [:index, :show]
   resources :lessons, except: [:destroy, :index]

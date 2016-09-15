@@ -18,6 +18,22 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
   mount_uploader :avatar, PictureUploader
 
+  def current_user? user
+    self == user
+  end
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def unfollow other_user
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
   class << self
     def from_omniauth auth
       find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
@@ -38,10 +54,6 @@ class User < ApplicationRecord
           user.email = data["email"] if user.email.blank?
         end
       end
-    end
-
-    def current_user? user
-      self == user
     end
 
     def word_learned user
