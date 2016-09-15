@@ -22,6 +22,7 @@ gem "ransack"
 gem "will_paginate", "3.1.0"
 gem "jquery-countdown-rails"
 gem "i18n-js", ">= 3.0.0.rc11"
+gem "delayed_job_active_record"
 
 group :development, :test do
   gem "byebug", platform: :mri

@@ -5,6 +5,7 @@ class Lesson < ApplicationRecord
   has_many :results, dependent: :destroy
 
   before_create :build_result
+  after_create :send_remind_email
 
   validates :category, presence: true
   validate :category_word_count
@@ -46,5 +47,10 @@ class Lesson < ApplicationRecord
     unless self.category && self.category.words.count >= Settings.word.minimum
       self.errors.add :category, I18n.t("lesson.learned_all")
     end
+  end
+
+  def send_remind_email
+    LessonMailer.delay(run_at: Settings.email_delay.hours.from_now,
+      target_id: self.id).remind_email self
   end
 end

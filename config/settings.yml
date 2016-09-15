@@ -16,3 +16,4 @@ word:
   minimum: 10
 default_password: "12345678"
 duration: 600
+email_delay: 8
