@@ -13,11 +13,10 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
 
-  validates :fullname, presence: true, length: {maximum: 50}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: 1}
+  mount_uploader :avatar, PictureUploader
 
   class << self
     def from_omniauth auth
@@ -28,7 +27,7 @@ class User < ApplicationRecord
           }@default.mail"
         user.password = Settings.default_password
         user.fullname = auth.info.name
-        user.avatar = auth.info.image
+        user.remote_avatar_url = auth.info.image.gsub "http://", "https://"
       end
     end
 
@@ -39,6 +38,10 @@ class User < ApplicationRecord
           user.email = data["email"] if user.email.blank?
         end
       end
+    end
+
+    def current_user? user
+      self == user
     end
   end
 end

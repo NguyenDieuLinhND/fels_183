@@ -1,0 +1,5 @@
+<li>
+  <%= image_tag user.avatar, class: "img-lesson",
+    size: Settings.size_avatar_activity %>
+  <%= link_to user.fullname, user_path(user) %>
+</li>

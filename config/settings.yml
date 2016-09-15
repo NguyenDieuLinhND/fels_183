@@ -3,6 +3,7 @@ size_avatar: "200x200"
 size_avatar_activity: "50x50"
 size_gravatar: 50
 size_word: 40
+time_format: "%d/%m/%Y"
 size_word_in_category: 10
 search_field:
   user: "fullname_cont"
