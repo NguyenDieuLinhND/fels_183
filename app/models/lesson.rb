@@ -12,10 +12,33 @@ class Lesson < ApplicationRecord
   accepts_nested_attributes_for :results, reject_if: proc {|attribute|
     attribute[:answer_id].blank?}
 
+  enum status: [:init, :testing, :checked]
+
   def build_result
     category.words.shuffle().take(Settings.word.minimum).each do |word|
       self.results.build word_id: word.id
     end
+  end
+
+  def update_time_status
+    if init?
+      update_attributes started_at: Time.zone.now, status: :testing
+    elsif testing?
+      update_attributes spent_time: calculated_spent_time
+    end
+  end
+
+  def calculated_spent_time
+    time = Time.zone.now - started_at
+    time > Settings.duration ? Settings.duration : time
+  end
+
+  def time_out?
+    checked? || Time.zone.now > started_at + Settings.duration
+  end
+
+  def remaining_time
+    init? || testing? ? Settings.duration - (Time.zone.now - started_at).to_i : 0
   end
 
   private

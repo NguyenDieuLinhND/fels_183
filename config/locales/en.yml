@@ -18,14 +18,11 @@ en:
     edit: "Edit"
 
   warning:
-    remind_change_email_address: "Your twitter did'nt give us your email so we
-      will give you a default email, please change it later"
     character_minimum: "characters minimum"
     change_password: "(leave blank if you don't want to change it)"
     need_password: "(we need your current password to confirm your changes)"
     unhappy: "Unhappy?"
     sure: "Are you sure?"
-    omniauth_sign_in: "Sign in with "
 
   user_option:
     cancel_account: "Delete my account"
@@ -45,7 +42,7 @@ en:
     edit_category: "Edit category"
     create_word: "Create word"
     create_answer: "Create answer"
-    do_lesson: "Do lesson"
+    lesson: "Lesson"
 
   btn:
     submit: "Submit"
@@ -57,8 +54,10 @@ en:
     words: "Words"
     lesson: "Lessons"
     filter: "Filter"
-    start: "Start"
+    start: "Do lesson"
     finish: "Finish"
+    save: "Save"
+    create_exam: "Create exam"
 
   flash:
     create_user_success: "Create user successgully!"
@@ -66,6 +65,10 @@ en:
     edit_success: "Edit successfully!"
     user_no: "Can't delete!"
     delete_user: "Delete user successfully!"
+    completed_lesson: "Lesson is completed!"
+    save_lesson: "Lesson is saved!"
+    finish_error: "Finish error!"
+
 
   message:
     error: "The form contains %{error_count} errors"
@@ -82,8 +85,14 @@ en:
     description: "Description: %{description}"
     word: "Word"
     category_name: "Name: %{category_name}"
-    category: "Category: %{category_name}"
-    content: "Questions"
+    category: "Category:"
+    category_name: "Category: %{category_name}"
+    lessons: "Lessons"
+    count_correct: "%{count_correct}/"
+    results_count: "%{results_count}"
+    lesson_name: "Lesson %{lesson.id}"
+    status: "Status"
+    time_remain: "Time remain: "
 
   confirm:
     delete_user: "Are you want to delete this user?"
@@ -98,3 +107,11 @@ en:
 
   lesson:
     learned_all: "The words have been learning all!"
+    created_at: "Date: %{time_created}"
+    result: "Result"
+    status: "%{status_lesson}"
+
+  js:
+    alert: Your exam has timed out. Your test will be submitted automatically
+
+  format_time: "%d/%m/%Y %H:%M:%S"

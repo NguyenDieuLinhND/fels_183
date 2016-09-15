@@ -1,19 +1,47 @@
-<% provide :title, t("provide.do_lesson") %>
+<% provide :title, t("provide.lesson") %>
 
 <div class="exam_info">
-  <div class="category">
-    <h3><%= t "title.category", category_name: @lesson.category.name %></h3>
+  <p><%= t "lesson.created_at", time_created: "#{time @lesson.created_at}" %></p>
+  <% if @lesson.checked? %>
+    <div class="result">
+      <%= t "lesson.result" %>:
+      <span class="exam_result">
+        <b>
+          <%= t "title.count_correct", count_correct: @lesson.score %>
+          <%= t "title.results_count", results_count: @lesson.results.count %>
+        </b>
+      </span>
+    </div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <div class="title">
+      <h1><%= @lesson.category.name %></h1>
+    </div>
+
+    <%= form_for @lesson do |f| %>
+      <div class="col-md-4">
+        <ol>
+          <%= f.fields_for :results do |builder| %>
+            <%= render "result", f: builder %>
+          <% end %>
+        </ol>
+      </div>
+      <div class="col-md-12 col-md-offset-1 center" >
+        <% unless @lesson.time_out? %>
+          <%= f.submit t("btn.save"), class: "btn btn-danger btn-save" %>
+          <%= f.submit t("btn.finish"), name: "finish",
+            class: "btn btn-primary btn-finish" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-3 col-md-offset-1 timer">
+    <h4><%= t "time.time_remain" %></h4>
+    <%= hidden_field_tag :remaining_time, @remaining_time %>
+    <div id="clock"></div>
   </div>
 </div>
-<h1><%= t "title.content" %></h1>
-
-<%= form_for @lesson do |f| %>
-  <ol>
-    <%= f.fields_for :results do |builder| %>
-      <%= render "result", f: builder %>
-    <% end %>
-  </ol>
-  <div class="action-finish-lesson center" >
-    <%= f.submit t("btn.finish"), class: "btn btn-primary btn-finish" %>
-  </div>
-<% end %>
