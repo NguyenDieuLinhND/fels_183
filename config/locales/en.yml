@@ -128,3 +128,6 @@ en:
     alert: Your exam has timed out. Your test will be submitted automatically
 
   format_time: "%d/%m/%Y %H:%M:%S"
+
+  mail:
+    remind_subject: "Time remain do lesson"
