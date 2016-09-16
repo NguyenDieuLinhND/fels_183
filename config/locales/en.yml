@@ -53,9 +53,9 @@ en:
     search: "Search"
     edit: "Edit"
     words: "Words"
-    lesson: "Do lesson"
+    lesson: "Lessons"
     filter: "Filter"
-    start: "Do lesson"
+    create_lesson: "Create lesson"
     finish: "Finish"
     save: "Save"
     create_exam: "Create exam"
@@ -112,7 +112,7 @@ en:
     learned: "Learned %{word_learned} words"
     activities: "Activities"
     join_date: "Joined from %{time}"
-    lessons: "Lessons"
+    lessons: "Examinations"
 
   answer:
     correct: "Answer is correct!"

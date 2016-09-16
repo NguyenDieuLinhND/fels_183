@@ -6,7 +6,7 @@
         <%= link_to image_tag(current_user.avatar, alt: current_user.fullname,
           size: Settings.size_avatar), user_path(current_user) %>
         <br>
-        <%= current_user.fullname %>
+        <h3><%= link_to current_user.fullname, user_path(current_user) %></h3>
       </div>
       <div class="row text-center">
         <p class="text-center"><%= t "home.learned", word_learned: @word_learned.size %></p>
@@ -37,6 +37,12 @@
           </thead>
           <tbody>
             <br>
+            <div class="search center">
+              <%= form_tag root_path, method: :get do %>
+                <%= text_field_tag :search_name, params[:search_name] %>
+                <%= submit_tag t("btn.search"), class: "btn btn-primary" %>
+              <% end %>
+            </div>
             <% if @lessons.any? %>
               <% @lessons.each do |lesson| %>
                 <tr>

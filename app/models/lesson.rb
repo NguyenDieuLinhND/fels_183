@@ -15,6 +15,9 @@ class Lesson < ApplicationRecord
 
   enum status: [:init, :testing, :checked]
 
+  scope :search_lesson, -> user_id, search_name{where(user_id: user_id).
+    joins(:category).where("categories.name LIKE '%#{search_name}%'")}
+
   def build_result
     category.words.shuffle().take(Settings.word.minimum).each do |word|
       self.results.build word_id: word.id
