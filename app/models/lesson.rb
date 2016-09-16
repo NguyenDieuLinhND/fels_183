@@ -6,6 +6,7 @@ class Lesson < ApplicationRecord
 
   before_create :build_result
   after_create :send_remind_email
+  after_update :send_complete_email, :cancel_remain_email
 
   validates :category, presence: true
   validate :category_word_count
@@ -52,5 +53,16 @@ class Lesson < ApplicationRecord
   def send_remind_email
     LessonMailer.delay(run_at: Settings.email_delay.seconds.from_now,
       target_id: self.id).remind_email self
+  end
+
+  def send_complete_email
+    LessonWorker.perform_async self.id
+  end
+
+  def cancel_remain_email
+    if self.checked?
+      email = Delayed::Job.find_by target_id: self.id
+      email.delete if email.present?
+    end
   end
 end

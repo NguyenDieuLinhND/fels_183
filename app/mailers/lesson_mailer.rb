@@ -4,4 +4,16 @@ class LessonMailer < ApplicationMailer
     @lesson = lesson
     mail to: @user.email, subject: I18n.t("mail.remind_subject")
   end
+
+  def lesson_finished_email lesson
+    @user = lesson.user
+    @lesson = lesson
+    mail to: @user.email, subject: I18n.t("mail.result_subject")
+  end
+
+  def monthly_email user_id, word_count
+    @word_count = word_count
+    @user = User.find_by id: user_id
+    mail to: @user.email, subject: I18n.t("mail.monthly_subject")
+  end
 end

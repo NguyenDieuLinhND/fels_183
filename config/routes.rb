@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
 
   devise_for :users,
     controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
     resources :users, except: [:edit, :update]
     resources :categories, except: [:show, :destroy]
     resources :words, only: [:index, :new, :create]
+    mount Sidekiq::Web, at: "/sidekiq"
   end
 
   root "static_pages#home"
