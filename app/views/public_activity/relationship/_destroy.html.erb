@@ -1,0 +1,21 @@
+<div class="well">
+  <% if activity %>
+    <aside class="col-md-1">
+      <%= image_tag activity.owner.avatar,
+        size: Settings.size_avatar_activity %>
+    </aside>
+    <span>
+      <b>
+        <%= link_to activity.owner.fullname, activity.owner if activity.owner %>
+      </b>
+      <%= t "activity.unfollow" %>
+      <b><%= link_to activity.recipient.fullname,
+        activity.recipient %></b>
+    </span>
+    <span class="pull-right">
+      <small>
+        <%= t "activity.ago", time: time_ago_in_words(activity.created_at) %>
+      </small>
+    </span>
+  <% end %>
+</div>

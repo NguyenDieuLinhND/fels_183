@@ -15,6 +15,9 @@ class UsersController < ApplicationController
       current_user.active_relationships.build
     end
     @word_learned = Word.learned @user.id
+    @activities = PublicActivity::Activity.order("created_at desc").where(
+      owner_id: @user.id, owner_type: "User").
+      paginate page: params[:page], per_page: Settings.size
   end
 
 end

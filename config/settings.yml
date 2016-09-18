@@ -1,8 +1,8 @@
 size: 8
 size_lesson: 5
 size_avatar: "200x200"
-size_avatar_activity: "50x50"
-size_gravatar: 50
+size_avatar_activity: "30x30"
+size_avatar_list: "50x50"
 size_word: 40
 time_format: "%d/%m/%Y"
 size_word_in_category: 10

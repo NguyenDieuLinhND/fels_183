@@ -131,6 +131,9 @@ en:
     created_at: "Date: %{time_created}"
     result: "Result"
     status: "%{status_lesson}"
+    word: "word"
+    learned: "learned"
+    category: " from category "
 
   js:
     alert: Your exam has timed out. Your test will be submitted automatically
@@ -144,3 +147,8 @@ en:
 
   followers: "follower"
   following: "following"
+
+  activity:
+    follow: "followed"
+    unfollow: "unfollowed"
+    ago: "%{time} ago"
