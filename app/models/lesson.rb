@@ -15,6 +15,8 @@ class Lesson < ApplicationRecord
 
   enum status: [:init, :testing, :checked]
 
+  scope :recent, -> (time) {where("results.created_at > ?", time) if time.present?}
+
   def build_result
     category.words.shuffle().take(Settings.word.minimum).each do |word|
       self.results.build word_id: word.id

@@ -24,6 +24,7 @@ gem "jquery-countdown-rails"
 gem "i18n-js", ">= 3.0.0.rc11"
 gem "delayed_job_active_record"
 gem "figaro"
+gem "whenever", require: false
 
 group :development, :test do
   gem "byebug", platform: :mri

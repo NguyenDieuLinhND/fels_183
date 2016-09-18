@@ -43,5 +43,15 @@ class User < ApplicationRecord
     def current_user? user
       self == user
     end
+
+    def monthly_email
+      @users = User.all
+      @users.each do |user|
+        unless user.is_admin?
+          wordcount = user.lessons.recent(1.month.ago).results.word.size
+          LessonMailer.monthly_email user.email, wordcount
+        end
+      end
+    end
   end
 end
