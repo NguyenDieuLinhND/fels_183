@@ -4,7 +4,7 @@ var countdown = function() {
     format: 'HMS',
     onExpiry: function() {
       alert(I18n.t("js.alert"));
-      $('.btn-save').trigger('click');
+      $('.btn-finish').trigger('click');
       $('.btn-save').hidden();
     }
   });
