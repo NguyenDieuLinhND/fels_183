@@ -1,4 +1,6 @@
 class Lesson < ApplicationRecord
+  include PublicActivity::Common
+
   belongs_to :category
   belongs_to :user
 

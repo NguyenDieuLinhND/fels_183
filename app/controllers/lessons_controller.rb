@@ -21,6 +21,7 @@ class LessonsController < ApplicationController
       if params[:finish] || @lesson.time_out?
         @lesson.checked!
         @lesson.update_attributes score: count_correct_answers
+        @lesson.create_activity :update, owner: current_user
         flash[:success] = t "flash.completed_lesson"
       end
     else

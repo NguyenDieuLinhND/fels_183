@@ -17,10 +17,11 @@
         <b>
           <%= t "home.join_date",
             time: @user.created_at.to_date.strftime(Settings.time_format) %>
-        </b>
-        <br>
         </b><br>
-        <b><%= t "home.learned", word_learned: @word_learned.size %></b><br>
+        <b>
+          <%= t "lesson.learned" %>
+          <%= pluralize @word_learned.size, t("lesson.word") %>
+        </b><br>
       </p>
     </div>
   </div>
@@ -28,5 +29,10 @@
     <div class="row text-center btn-top">
       <h2 class="text-left"><%= t "home.activities" %></h2>
     </div>
+    <% @activities.each do |activity| %>
+      <div class="activity">
+        <%= render_activity activity %>
+      </div>
+    <% end %>
   </div>
 </div>
