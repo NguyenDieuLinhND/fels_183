@@ -131,3 +131,5 @@ en:
 
   mail:
     remind_subject: "Time remain do lesson"
+    result_subject: "Exam has finished"
+    monthly_subject: "Monthly report"

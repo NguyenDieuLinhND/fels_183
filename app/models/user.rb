@@ -43,5 +43,10 @@ class User < ApplicationRecord
     def current_user? user
       self == user
     end
+
+    def word_learned user
+      Word.joins(results: :lesson).where(lessons:{user_id: user.id,
+        status: 2, created_at: (Time.now-1.month .. Time.now)}).size
+    end
   end
 end
