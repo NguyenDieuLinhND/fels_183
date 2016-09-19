@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require jquery.countdown
 //= require countdown
+//= require relationship
 //= require i18n/translations
 //= require_tree .
 

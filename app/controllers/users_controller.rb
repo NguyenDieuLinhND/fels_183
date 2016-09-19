@@ -9,6 +9,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @relationship = if current_user.following? @user
+      current_user.active_relationships.find_by followed_id: @user.id
+    else
+      current_user.active_relationships.build
+    end
     @word_learned = Word.learned @user.id
   end
 
