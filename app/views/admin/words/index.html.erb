@@ -1,5 +1,41 @@
 <% provide :title, t("header.words") %>
 <h1><%= t "provide.create_word" %></h1>
-
-<%= link_to t("provide.create_word"), new_admin_word_path,
-  class: "btn btn-primary" %>
+<div class="col-md-9 col-md-offset-2">
+  <table class="table table-striped">
+    <thead class="thead_table_word">
+      <tr>
+        <td><b><%= t "title.word_category" %></b></td>
+        <td><b><%= t "title.word_name" %></b></td>
+        <td><b><%= t "title.word_answer_number" %></b></td>
+        <td><b><%= t "title.created_at" %></b></td>
+        <td><%= link_to t("provide.create_word"), new_admin_word_path,
+          class: "btn btn-primary" %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <br>
+      <div class="search center">
+        <%= render "admin/shared/search_form", name: Settings.
+          search_field.category %>
+      </div>
+      <% if @words.any? %>
+        <% @words.each do |word| %>
+        <tr>
+          <td><%= word.category.name %></td>
+          <td><%= word.name %></td>
+          <td><%= word.answers.size %></td>
+          <td><%= word.created_at.to_date %></td>
+          <td>
+            <%= link_to t("admin.edit"), edit_admin_word_path(word),
+              class: "btn btn-md btn-primary" %>
+            <%= link_to t("admin.delete"), [:admin, word], method: :delete,
+              data: {confirm: t("confirm.delete_word")},
+              class: "btn btn-md btn-danger" %>
+          </td>
+        </tr>
+        <% end %><br>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="center"><%= will_paginate @words %></div>
+</div>
