@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#home"
     resources :users, except: [:edit, :update]
-    resources :categories, except: [:show, :destroy]
+    resources :categories, except: [:destroy]
     resources :words, only: [:index, :new, :create]
+    resources :lessons, only: [:index, :show]
     mount Sidekiq::Web, at: "/sidekiq"
   end
 

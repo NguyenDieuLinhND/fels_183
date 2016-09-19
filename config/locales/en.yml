@@ -12,6 +12,7 @@ en:
     words: "Words"
     answers: "Answers"
     title_admin: "E-Learning"
+    list_exam: "List exam"
 
   user_method:
     login: "Log In"
@@ -47,6 +48,7 @@ en:
     create_word: "Create word"
     create_answer: "Create answer"
     lesson: "Lesson"
+    lessons: "Lessons"
 
   btn:
     submit: "Submit"
@@ -77,13 +79,13 @@ en:
     cant_find_relationship: "Can't find relationship"
     user_nil: "There is no user yet"
 
-
   message:
     error: "The form contains %{error_count} errors"
 
   table:
     name: "Name"
     quantity_word: "Quantity word"
+    quantity_lesson: "Quantity exam"
     lesson:
       created_date: "Created Date"
       subject: "Subject"
@@ -112,6 +114,7 @@ en:
     relationship: "Relationship"
     following: "following"
     follower: "follower"
+    user: "User: %{user_name}"
 
   confirm:
     delete_user: "Are you want to delete this user?"
@@ -134,11 +137,13 @@ en:
     word: "word"
     learned: "learned"
     category: " from category "
+    user: "User"
 
   js:
     alert: Your exam has timed out. Your test will be submitted automatically
     error_follow: "Error happen"
   format_time: "%d/%m/%Y %H:%M:%S"
+  format_date: "%d/%m/%Y"
 
   mail:
     remind_subject: "Time remain do lesson"

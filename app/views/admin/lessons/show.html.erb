@@ -1,0 +1,33 @@
+<% provide :title, t("provide.lesson") %>
+
+<div class="exam_info">
+  <p><%= t "lesson.created_at", time_created: "#{time @lesson.created_at}" %></p>
+  <div class="result">
+    <%= t "lesson.result" %>:
+    <span class="exam_result">
+      <b>
+        <%= t "title.count_correct", count_correct: @lesson.score %>
+        <%= t "title.results_count", results_count: @lesson.results.count %>
+      </b>
+    </span>
+  </div>
+  <p><%= t "title.user", user_name: @lesson.user.fullname %></p>
+</div>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <div class="title">
+      <h1><%= @lesson.category.name %></h1>
+    </div>
+
+    <%= form_for @lesson do |f| %>
+      <div class="col-md-4">
+        <ol>
+          <%= f.fields_for :results do |builder| %>
+            <%= render "result", f: builder %>
+          <% end %>
+        </ol>
+      </div>
+    <% end %>
+  </div>
+</div>

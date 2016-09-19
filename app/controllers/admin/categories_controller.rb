@@ -22,6 +22,11 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  def show
+    @words = @category.words.order(updated_at: :desc).paginate page: params[:page],
+      per_page: Settings.size_word_in_category
+  end
+
   def edit
   end
 
