@@ -34,9 +34,13 @@
               </span>
             </li>
             <li>
+              <span class="glyphicon glyphicon-book icon", aria-hidden="true">
+                &nbsp;<%= link_to t("header.list_exam"), admin_lessons_path %>
+              </span>
+            </li>
+            <li>
               <span class="glyphicon glyphicon-log-out icon", aria-hidden="true">
-                &nbsp;
-                <%= link_to t("header.logout"), destroy_user_session_path,
+                &nbsp;<%= link_to t("header.logout"), destroy_user_session_path,
                   method: :delete %>
               </span>
             </li>

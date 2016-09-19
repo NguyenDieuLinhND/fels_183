@@ -1,8 +1,11 @@
 <tr>
   <th><%= category.name %></th>
   <th><%= category.words.size %></th>
+  <th><%= category.lessons.size %></th>
   <th>
+    <%= link_to t("btn.view"), [:admin, category], class: "btn btn-success" %>
     <%= link_to t("btn.edit"), edit_admin_category_path(category.id),
       class: "btn btn-primary" %>
+    <%= link_to t("btn.delete"), "#", class: "btn btn-danger" %>
   </th>
 </tr>
