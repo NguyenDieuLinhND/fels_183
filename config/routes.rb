@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :categories, except: [:destroy]
     resources :words, only: [:index, :new, :create]
     resources :lessons, only: [:index, :show]
-    resources :categories, except: [:show, :destroy]
+    resources :categories, except: [:show]
     resources :words, except: :create
     mount Sidekiq::Web, at: "/sidekiq"
   end
