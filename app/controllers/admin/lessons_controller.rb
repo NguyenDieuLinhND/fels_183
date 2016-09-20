@@ -7,7 +7,7 @@ class Admin::LessonsController < Admin::BaseController
     else
       Lesson.includes :category
     end
-    @lessons = @lessons.order(updated_at: :desc).
-      paginate page: params[:page], per_page: Settings.size_lesson
+    @lessons = @lessons.order(created_at: :desc).paginate page: params[:page],
+      per_page: Settings.size_lesson
   end
 end

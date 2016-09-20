@@ -166,6 +166,10 @@ span{
   margin-left: 15%;
 }
 
+.list-category {
+  margin-top: 20px;
+}
+
 .right-content {
   padding-left : 5%;
   border-left: 1px solid;
@@ -189,7 +193,10 @@ span{
 }
 
 .alession {
- margin-top: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width : 100%;
 }
 
 .img-lesson {
@@ -325,4 +332,18 @@ ol{
 
 .xm-9 {
   padding-left: 0px;
+}
+
+.list-activity {
+  height: 280px;
+  overflow: auto;
+}
+.alession {
+  .well .col-md-1 img{
+    margin-left: -18px;
+  }
+  .well span{
+    font-size: 14px;
+    margin-left: 6px;
+  }
 }
