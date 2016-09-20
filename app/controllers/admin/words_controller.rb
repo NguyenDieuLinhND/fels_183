@@ -18,7 +18,7 @@ class Admin::WordsController < Admin::BaseController
     @word = Word.new word_params
     if @word.save
       flash[:success] = t "flash.create_success"
-      redirect_to admin_word_path @word
+      redirect_to admin_words_path @word
     else
       render :new
     end
@@ -29,8 +29,8 @@ class Admin::WordsController < Admin::BaseController
 
   def update
     if @word.update_attributes word_params
-      flash[:success] = t "flash.edit_word_success"
-      redirect_to admin_word_path @word
+      flash[:success] = t "flash.edit_success"
+      redirect_to admin_words_path @word
     else
       render :edit
     end

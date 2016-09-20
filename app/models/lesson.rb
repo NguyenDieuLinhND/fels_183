@@ -7,8 +7,8 @@ class Lesson < ApplicationRecord
   has_many :results, dependent: :destroy
 
   before_create :build_result
-  after_create :send_remind_email
-  after_update :send_complete_email, :cancel_remain_email
+  # after_create :send_remind_email
+  # after_update :send_complete_email, :cancel_remain_email
 
   validates :category, presence: true
   validate :category_word_count

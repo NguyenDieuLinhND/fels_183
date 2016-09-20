@@ -4,6 +4,8 @@ class Word < ApplicationRecord
   has_many :answers, dependent: :destroy
   has_many :results, dependent: :destroy
 
+  delegate :name, to: :category, prefix: true, allow_nil: true
+
   accepts_nested_attributes_for :answers,
     reject_if: proc {|attribute| attribute[:answer_content].blank?},
     allow_destroy: true
