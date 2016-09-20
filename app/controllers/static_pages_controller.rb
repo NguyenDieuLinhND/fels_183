@@ -9,6 +9,9 @@ class StaticPagesController < ApplicationController
       end
       @lessons = @lessons.order(updated_at: :desc).
         paginate page: params[:page], per_page: Settings.size_lesson
+      @activities = PublicActivity::Activity.order("created_at desc").where(
+        owner_id: current_user.id, owner_type: "User").paginate page: params[:page],
+        per_page: Settings.size
     end
   end
 end

@@ -1,5 +1,5 @@
 <li>
-  <%= image_tag user.avatar, class: "img-lesson" %>
+  <%= image_tag user.avatar, class: "img-lesson", size: Settings.size_avatar_list %>
   <%= link_to user.fullname, [:admin, user] %>
   <%= link_to(t("user.admin.delete"), [:admin, user],
     method: :delete, data: {confirm: t("confirm.delete_user")},
