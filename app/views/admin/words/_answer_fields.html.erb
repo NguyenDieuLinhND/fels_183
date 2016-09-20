@@ -1,12 +1,3 @@
-<span class="field">
-  <h2><%= t "btn.add_answer" %></h2>
-  <div class="row">
-    <%= f.simple_fields_for :answers do |ff| %>
-      <%= ff.input :answer_content %>
-      <%= ff.input :is_correct %>
-      <div class="pull-right">
-        <%= link_to_remove_fields t("btn.remove"), f %>
-      </div>
-    <% end %>
-  </div>
-</span>
+<%= f.input :answer_content %>
+<%= f.input :is_correct %>
+<%= link_to_remove_fields t("btn.remove"), f %>

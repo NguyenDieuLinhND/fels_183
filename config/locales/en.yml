@@ -39,6 +39,8 @@ en:
   admin:
     home_title: "Home"
     manage: "Manage"
+    delete: "Delete"
+    edit: "Edit"
 
   provide:
     create_user: "Create user"
@@ -78,6 +80,8 @@ en:
     finish_error: "Finish error!"
     cant_find_relationship: "Can't find relationship"
     user_nil: "There is no user yet"
+    not_admin: "You don't have the permission to access this page"
+
 
   message:
     error: "The form contains %{error_count} errors"
@@ -115,6 +119,10 @@ en:
     following: "following"
     follower: "follower"
     user: "User: %{user_name}"
+    word_category: "Category"
+    word_name: "Name"
+    word_answer_number: "Answer number"
+    created_at: "Created at"
 
   confirm:
     delete_user: "Are you want to delete this user?"
