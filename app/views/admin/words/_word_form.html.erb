@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @word] do |f| %>
+  <%= f.input :category_id, collection: @category_selects %>
+  <%= f.input :name %>
+  <%= f.simple_fields_for :answers, @word.answers do |builder| %>
+    <%= render "answer_fields", f: builder %>
+  <% end %>
+  <p><%= link_to_add_fields t("btn.add_answer"), f, :answers %></p>
+  <p><%= f.submit t("btn.submit"), class: "btn btn-primary" %></p>
+<% end %>

@@ -59,6 +59,7 @@ en:
     remove: "Remove"
     search: "Search"
     edit: "Edit"
+    delete: "Delete"
     words: "Words"
     lesson: "Lessons"
     filter: "Filter"
@@ -81,6 +82,7 @@ en:
     cant_find_relationship: "Can't find relationship"
     user_nil: "There is no user yet"
     not_admin: "You don't have the permission to access this page"
+    delete_fail : "Delete Failed"
 
 
   message:
@@ -126,6 +128,7 @@ en:
 
   confirm:
     delete_user: "Are you want to delete this user?"
+    delete: "Are you sure?"
 
   home:
     learned: "Learned %{word_learned} words"

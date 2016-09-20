@@ -43,6 +43,18 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  def destroy
+    respond_to do |format|
+      if @category.destroy
+        flash[:success] = t "flash.delete_success"
+        format.js
+      else
+        flash[:danger] = t "flash.delete_fail"
+        format.html{redirect_to admin_categories_path}
+      end
+    end
+  end
+
   private
   def category_params
     params.require(:category).permit :name, :description
